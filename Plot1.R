@@ -1,3 +1,6 @@
+#loads dplyr package
+library(dplyr)
+
 # Load data, assumes the dataset has been downloaded and unzipped in the same directory as the R script
 
 FullData <- tbl_df(read.csv("household_power_consumption.txt", header=T, sep=';', na.strings="?", nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"'))
@@ -11,6 +14,7 @@ data <- filter(FullData, Date == "2007-02-01" | Date == "2007-02-02")
 rm(FullData)
 
 #draws histogram for Plot 1
+par(mfrow=c(1,1))
 hist(data$Global_active_power, main="Global Active Power", breaks = 25,
      xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
 

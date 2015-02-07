@@ -1,3 +1,6 @@
+#loads dplyr package
+library(dplyr)
+
 # Load data, assumes the dataset has been downloaded and unzipped in the same directory as the R script
 
 FullData <- tbl_df(read.csv("household_power_consumption.txt", header=T, sep=';', na.strings="?", nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"'))
